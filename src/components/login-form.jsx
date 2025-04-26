@@ -1,6 +1,6 @@
 const LoginForm = () => {
   return (
-    <div className="card bg-neutral text-neutral-content w-120">
+    <div className="card bg-base-100 text-neutral-content w-120 shadow-sm">
       <div className="card-body items-center text-center">
         <h2 className="card-title">Login</h2>
         <form action="" className="flex flex-col m-5">

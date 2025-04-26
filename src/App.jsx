@@ -6,7 +6,7 @@ import Post from "./pages/post";
 import Navbar from "./components/navbar";
 
 function App() {
-  return <Home />;
+  return <Login />;
 }
 
 export default App;
