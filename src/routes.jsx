@@ -1,5 +1,6 @@
 import App from "./App";
-import Home from "./pages/home";
+import Login from "./pages/login";
+import Post from "./pages/post";
 import Register from "./pages/register";
 
 const routes = [
@@ -8,12 +9,16 @@ const routes = [
     element: <App />,
   },
   {
+    path: "/login",
+    element: <Login />,
+  },
+  {
     path: "/register",
     element: <Register />,
   },
   {
-    path: "/home",
-    element: <Home />,
+    path: "/post",
+    element: <Post />,
   },
 ];
 

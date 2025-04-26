@@ -2,7 +2,14 @@ import Navbar from "../components/navbar";
 import PostLayout from "../components/post-layout";
 
 const Post = () => {
-  return <PostLayout />;
+  return (
+    <>
+      <Navbar />
+      <div className="p-10 ">
+        <PostLayout />
+      </div>
+    </>
+  );
 };
 
 export default Post;

@@ -71,7 +71,10 @@ const LoginForm = () => {
             At least one uppercase letter
           </p>
           <p className="mt-10">
-            Not registered? <a className="link link-primary">Register</a>
+            Not registered?{" "}
+            <a className="link link-primary" href="/register">
+              Register
+            </a>
           </p>
           <button className="btn btn-primary mt-2">Submit</button>
         </form>
