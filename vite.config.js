@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { defineConfig } from "vite";
 import { config } from "dotenv";
 import tailwindcss from "@tailwindcss/vite";

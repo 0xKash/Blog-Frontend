@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 const LoginForm = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className="card bg-base-100 text-neutral-content w-120 shadow-sm">
       <div className="card-body items-center text-center">
@@ -26,9 +31,13 @@ const LoginForm = () => {
               required
               placeholder="Username"
               pattern="[A-Za-z][A-Za-z0-9\-]*"
-              minlength="3"
-              maxlength="30"
+              minLength="3"
+              maxLength="30"
               title="Only letters, numbers or dash"
+              onChange={(e) => {
+                setUsername(e.target.value);
+                console.log(username);
+              }}
             />
           </label>
           <p className="validator-hint">
@@ -58,9 +67,13 @@ const LoginForm = () => {
               type="password"
               required
               placeholder="Password"
-              minlength="8"
+              minLength="8"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+              onChange={(e) => {
+                setPassword(e.target.value);
+                console.log(password);
+              }}
             />
           </label>
           <p className="validator-hint hidden">
