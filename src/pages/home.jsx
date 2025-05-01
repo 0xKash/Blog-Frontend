@@ -1,17 +1,20 @@
 import Navbar from "../components/navbar";
 import PostPreview from "../components/postpreview-card";
+import { useFetchPosts } from "../hooks/post/useFetchPosts";
 
 const Home = () => {
+  const posts = useFetchPosts();
+  console.log(posts);
+
+  posts.map((post) => console.log(post.title, post.content));
+
   return (
     <>
       <Navbar />
       <div className="flex items-center flex-col gap-10 p-10">
-        <PostPreview title={"My first post!"} />
-        <PostPreview title={"My second post!"} />
-        <PostPreview title={"My third post!"} />
-        <PostPreview title={"My first post!"} />
-        <PostPreview title={"My second post!"} />
-        <PostPreview title={"My third post!"} />
+        {posts.map((post) => (
+          <PostPreview title={post.title} content={post.content} />
+        ))}
       </div>
     </>
   );
