@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-const PostPreview = ({ title, content }) => {
+const PostPreview = ({ title, content, postId }) => {
   const navigate = useNavigate();
 
   return (
     <div
-      onClick={() => navigate("/post")}
+      onClick={() => navigate(`/${postId}`)}
       className="card card-dash bg-base-100 min-w-200 shadow-md transition hover:scale-101"
     >
       <div className="card-body">

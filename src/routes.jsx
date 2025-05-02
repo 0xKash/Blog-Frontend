@@ -17,7 +17,7 @@ const routes = [
     element: <Register />,
   },
   {
-    path: "/post",
+    path: "/:postId",
     element: <Post />,
   },
 ];
