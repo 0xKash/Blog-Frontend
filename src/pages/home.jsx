@@ -1,12 +1,9 @@
 import Navbar from "../components/navbar";
-import PostPreview from "../components/postpreview-card";
+import PostPreview from "../components/home/postpreview-card";
 import { useFetchPosts } from "../hooks/post/useFetchPosts";
 
 const Home = () => {
   const posts = useFetchPosts();
-  console.log(posts);
-
-  posts.map((post) => console.log(post.title, post.content));
 
   return (
     <>

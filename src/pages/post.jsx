@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar";
-import PostLayout from "../components/post-layout";
+import PostLayout from "../components/post/post-layout";
 
 const Post = () => {
   return (
