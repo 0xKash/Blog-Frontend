@@ -19,8 +19,8 @@ const PostLayout = () => {
       <div className="card card-dash bg-base-100 shadow-md mt-5">
         <div className="card-body">
           <h2 className="card-title  mb-5 text-2xl">Comment Something!</h2>
-          {comments.map((comment) => (
-            <Comment userId={comment.authorId} comment={comment} />
+          {comments.map((comment, index) => (
+            <Comment key={index} userId={comment.authorId} comment={comment} />
           ))}
           <form action="">
             <input

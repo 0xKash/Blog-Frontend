@@ -10,9 +10,10 @@ const Home = () => {
       <Navbar />
       <div className="flex items-center flex-col gap-10 p-10">
         {posts.map(
-          (post) =>
+          (post, index) =>
             post.published && (
               <PostPreview
+                key={index}
                 title={post.title}
                 content={post.content}
                 postId={post.id}
