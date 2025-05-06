@@ -30,3 +30,10 @@ export const loginUser = async (username, password, redirect) => {
     console.error(err);
   }
 };
+
+export const logoutUser = (redirect) => {
+  localStorage.removeItem("auth");
+  localStorage.removeItem("username");
+
+  redirect("/login");
+};
