@@ -1,14 +1,27 @@
+// eslint-disable-next-line no-undef
+const API_URL = process.env.API_URL;
+
 import { useState } from "react";
+
+import { useNavigate } from "react-router-dom";
+import { loginUser } from "../../utils/authUtils";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    loginUser(username, password, navigate);
+  };
 
   return (
     <div className="card bg-base-100 text-neutral-content w-120 shadow-sm">
       <div className="card-body items-center text-center">
         <h2 className="card-title">Login</h2>
-        <form action="" className="flex flex-col m-5">
+
+        <form action="" className="flex flex-col m-5" onSubmit={handleSubmit}>
           <label className="input validator">
             <svg
               className="h-[1em] opacity-50"
@@ -36,7 +49,6 @@ const LoginForm = () => {
               title="Only letters, numbers or dash"
               onChange={(e) => {
                 setUsername(e.target.value);
-                console.log(username);
               }}
             />
           </label>
@@ -67,12 +79,8 @@ const LoginForm = () => {
               type="password"
               required
               placeholder="Password"
-              minLength="8"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
               onChange={(e) => {
                 setPassword(e.target.value);
-                console.log(password);
               }}
             />
           </label>

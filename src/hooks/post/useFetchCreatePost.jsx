@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line no-undef
 const API_URL = process.env.API_URL;
 
 export const useFetchCreatePost = (title, content) => {
   const [post, setPost] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const createPost = async () => {
       try {
         const response = await fetch(`${API_URL}/posts`, {
           method: "post",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.auth,
+          },
           body: JSON.stringify({
             title: title,
             content: content,
@@ -21,6 +26,7 @@ export const useFetchCreatePost = (title, content) => {
 
         setPost(data);
       } catch (err) {
+        navigate("/login");
         console.error(err);
       }
     };

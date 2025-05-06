@@ -8,6 +8,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
+
       <div className="flex items-center flex-col gap-10 p-10">
         {posts.map(
           (post, index) =>
